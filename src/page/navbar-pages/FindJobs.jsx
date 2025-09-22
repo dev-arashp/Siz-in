@@ -29,22 +29,22 @@ function FindJobs() {
             New Job
           </button>
           <div className="border-t  border-[#e8e8e8] pt-5 flex flex-col gap-3">
-            <div className="flex  gap-5" onClick={() => setIsShow(!isShow)}>
-              {isShow ? (
-                <div className="flex justify-between items-center  w-full">
-                  <div className="flex gap-2">
-                    <img src={SvgOne} alt="" />
-                    <span className="text-sm font-medium text-gray-700">
-                      Categories
-                    </span>
+            <div className="flex  gap-5">
+              <div onClick={() => setIsShow(!isShow)} className=" w-full">
+                {isShow ? (
+                  <div className="flex justify-between cursor-pointer">
+                    <div className="flex gap-2">
+                      <img src={SvgOne} alt="" />
+                      <span className="text-sm font-medium  text-gray-700">
+                        Categories
+                      </span>
+                    </div>
+                    <div>
+                      <img className="rotate-90" src={imgArow} alt="" />
+                    </div>
                   </div>
-                  <div>
-                    <img className="rotate-90" src={imgArow} alt="" />
-                  </div>
-                </div>
-              ) : (
-                <div className="w-full flex flex-col gap-2">
-                  <div className="flex justify-between items-center  w-full">
+                ) : (
+                  <div className="flex justify-between cursor-pointer">
                     <div className="flex gap-2">
                       <img src={SvgOne} alt="" />
                       <span className="text-sm font-medium text-gray-700">
@@ -55,163 +55,168 @@ function FindJobs() {
                       <img className="-rotate-90" src={imgArow} alt="" />
                     </div>
                   </div>
-
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-900 "
-                    >
-                      All
-                    </label>
-                  </div>
-                  <span className="text-xs text-gray-400 font-semibold my-2">
-                    POPULAR
-                  </span>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      Logo Design
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      Branding Services
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-xs font-medium text-gray-600 "
-                    >
-                      Social Media Design
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      Website Design
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      Illustrations
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      Packaging Design
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      Landing Page Design
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      UI/UX Design
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-600 "
-                    >
-                      Architecture & Interior Design
-                    </label>
-                  </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
+            {isShow ? (
+              ""
+            ) : (
+              <div className="w-full flex flex-col gap-2">
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-900 "
+                  >
+                    All
+                  </label>
+                </div>
+                <span className="text-xs text-gray-400 font-semibold my-2">
+                  POPULAR
+                </span>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    Logo Design
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    Branding Services
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-xs font-medium text-gray-600 "
+                  >
+                    Social Media Design
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    Website Design
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    Illustrations
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    Packaging Design
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    Landing Page Design
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    UI/UX Design
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="default-radio-1"
+                    type="radio"
+                    value=""
+                    name="default-radio"
+                    class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 "
+                  />
+                  <label
+                    for="default-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-600 "
+                  >
+                    Architecture & Interior Design
+                  </label>
+                </div>
+              </div>
+            )}
           </div>
           <div className="border-t border-[#e8e8e8] mt-5 ">
             <div className="mt-5 flex items-center justify-between">

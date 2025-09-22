@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { FaCirclePlus, FaLocationDot } from "react-icons/fa6";
+import { FaCirclePlus, FaEye, FaLocationDot } from "react-icons/fa6";
 
 import GlareHover2 from "../../../components/animeshon/hoversbtn";
 import GlareHover3 from "../../../components/animeshon/HoverBtnTwo";
@@ -18,7 +18,8 @@ import {
 } from "react-icons/si";
 import LogoLoop from "../../../components/logo-loop/LogoLoop";
 import Foter from "../../../components/footer/Foter";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { BiSolidLike } from "react-icons/bi";
 
 const techLogos = [
   { node: <SiReact size={50} />, title: "React", href: "https://react.dev" },
@@ -42,21 +43,27 @@ const techLogos = [
 function ProfileUser() {
   const [user, setUser] = useState(null);
   const [Follow, setFollow] = useState(false);
+  const [isShow, setIsShow] = useState(false);
+  const [isShow1, setIsShow1] = useState(false);
+  const [isShow2, setIsShow2] = useState(false);
+  const [isShow3, setIsShow3] = useState(false);
+  const [isShow4, setIsShow4] = useState(false);
+  const [isShow5, setIsShow5] = useState(false);
+  const [isShow6, setIsShow6] = useState(false);
+  const [isShow7, setIsShow7] = useState(false);
+  const [isShow8, setIsShow8] = useState(false);
 
   useEffect(() => {
+    console.log("axios");
     axios
       .get("http://localhost:5000/ProfileUser")
       .then((res) => {
-        // بررسی ساختار داده
-        const u = res.data.ProfileUser
-          ? res.data.ProfileUser.find((item) => item.id === 1)
-          : res.data.find((item) => item.id === 1);
-        setUser(u);
+        const userData = res.data[0];
+        setUser(userData);
+        console.log("profile page", res.data[0]);
       })
       .catch((err) => console.log(err));
   }, []);
-
-  if (!user) return <p className="text-center mt-10">Loading...</p>;
 
   return (
     <div>
@@ -64,17 +71,17 @@ function ProfileUser() {
         <div>
           <img
             className="w-full object-cover h-75 absolute"
-            src={user.bgProfileUser}
+            src={user?.bgProfileUser}
             alt=""
           />
           <div className="px-10 flex flex-col  items-center gap-5 w-fit ">
             <div className="pt-60 flex flex-col  items-center gap-2 border-b border-dashed border-[#e8e8e8] pb-5 w-full">
               <img
                 className="size-30 object-cover rounded-full relative p-1 bg-white"
-                src={user.avatar}
+                src={user?.avatar}
                 alt=""
               />
-              <span className="text-lg font-semibold">{user.name}</span>
+              <span className="text-lg font-semibold">{user?.name}</span>
             </div>
             <div className="flex flex-col gap-2 border-b border-dashed border-[#e8e8e8] pb-5">
               <div onClick={() => setFollow(!Follow)}>
@@ -157,15 +164,15 @@ function ProfileUser() {
               </div>
               <div className="w-full flex justify-between items-center border-b border-dashed border-[#e8e8e8] pb-4">
                 <span className="font-semibold">Following :</span>
-                <div>{user.Following}</div>
+                <div>{user?.Following}</div>
               </div>
               <div className="w-full flex justify-between items-center border-b border-dashed border-[#e8e8e8] pb-4">
                 <span className="font-semibold">Appreciations :</span>
-                <div>{user.Appreciations}</div>
+                <div>{user?.Appreciations}</div>
               </div>
               <div className="w-full flex justify-between items-center border-b border-dashed border-[#e8e8e8] pb-4">
                 <span className="font-semibold">ProjectViews :</span>
-                <div>{user.ProjectViews}</div>
+                <div>{user?.ProjectViews}</div>
               </div>
             </div>
             <div className="w-full flex flex-col gap-3 border-b border-dashed px-1 border-[#e8e8e8] pb-5">
@@ -201,33 +208,322 @@ function ProfileUser() {
           </div>
         </div>
         <div className="pt-92 w-full  mx-10 ">
-          <div className="flex gap-8 *:font-semibold border-b border-[#e8e8e8]  pl-5">
-            <Link to="/ProfilrUser">
-              <span className="border-b-2 pb-3">Work</span>
-            </Link>
+          <ul className="flex gap-8 *:font-semibold border-b pb-4 border-[#e8e8e8]  pl-5">
+            <li>
+              <NavLink
+                to="/ProfileUser"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-medium text-sm border-b-2 border-black pb-4"
+                    : "font-medium text-sm pb-4 hover:border-b-2 "
+                }
+              >
+                Work
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/Moodboards"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-medium text-sm border-b-2 border-black pb-4"
+                    : "font-medium text-sm pb-4 hover:border-b-2 "
+                }
+              >
+                Moaderbords
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/Appreciations"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-medium text-sm border-b-2 border-black pb-4"
+                    : "font-medium text-sm pb-4 hover:border-b-2 "
+                }
+              >
+                Appreciations
+              </NavLink>
+            </li>
+          </ul>
 
-            <Link to="/Moodboards">
-              <span className="hover:border-b-2 hover:duration-300 text-stone-500">
-                Moodboards
-              </span>
-            </Link>
-            <span className="hover:border-b-2 hover:duration-300 text-stone-500">
-              Appreciations
-            </span>
-          </div>
-          <div className="grid grid-cols-3 gap-3 mt-8 *:rounded-xl">
-            <img src={user.img} alt="" />
-            <img src={user.img1} alt="" />
-            <img src={user.img2} alt="" />
-            <img src={user.img3} alt="" />
-            <img src={user.img4} alt="" />
-            <img src={user.img5} alt="" />
-            <img src={user.img6} alt="" />
-            <img src={user.img7} alt="" />
-            <img src={user.img8} alt="" />
-            <img src={user.img9} alt="" />
-            <img src={user.img10} alt="" />
-            <img src={user.img11} alt="" />
+          <div className=" flex flex-col justify-between h-160 my-10 mb-80 gap-3 mt-8 *:rounded-xl">
+            <div className=" grid grid-cols-3 w-full h-0 ">
+              <div
+                onMouseEnter={(e) => setIsShow(true)}
+                onMouseLeave={(e) => setIsShow(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img} alt="" />
+                </div>
+                {isShow && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div
+                onMouseEnter={(e) => setIsShow1(true)}
+                onMouseLeave={(e) => setIsShow1(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img1} alt="" />
+                </div>
+                {isShow1 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div
+                onMouseEnter={(e) => setIsShow2(true)}
+                onMouseLeave={(e) => setIsShow2(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img2} alt="" />
+                </div>
+                {isShow2 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className=" grid grid-cols-3 w-full h-0 ">
+              <div
+                onMouseEnter={(e) => setIsShow6(true)}
+                onMouseLeave={(e) => setIsShow6(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img6} alt="" />
+                </div>
+                {isShow6 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div
+                onMouseEnter={(e) => setIsShow7(true)}
+                onMouseLeave={(e) => setIsShow7(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img7} alt="" />
+                </div>
+                {isShow7 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div
+                onMouseEnter={(e) => setIsShow8(true)}
+                onMouseLeave={(e) => setIsShow8(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img8} alt="" />
+                </div>
+                {isShow8 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className=" grid grid-cols-3 w-full h-0 ">
+              <div
+                onMouseEnter={(e) => setIsShow3(true)}
+                onMouseLeave={(e) => setIsShow3(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img3} alt="" />
+                </div>
+                {isShow3 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div
+                onMouseEnter={(e) => setIsShow4(true)}
+                onMouseLeave={(e) => setIsShow4(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img4} alt="" />
+                </div>
+                {isShow4 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div
+                onMouseEnter={(e) => setIsShow5(true)}
+                onMouseLeave={(e) => setIsShow5(false)}
+              >
+                <div className="grid grid-cols-2 absolute *:rounded-xl w-190">
+                  <img src={user?.img5} alt="" />
+                </div>
+                {isShow5 && (
+                  <div className="relative bg-black/30 w-95 h-76 p-3  rounded-xl flex items-end justify-between">
+                    <div className="flex flex-col ">
+                      <span className="text-white font-semibold text-lg">
+                        Arash Pourkhanali Klor
+                      </span>
+                      <span className="text-white text-xs font-medium">
+                        {user.name}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <BiSolidLike />
+                        45
+                      </div>
+                      <div className="flex items-center text-xs gap-1 text-white">
+                        <FaEye />
+                        100
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>

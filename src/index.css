@@ -3,6 +3,12 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+/* Chrome, Safari, Edge */
 .imgBox::-webkit-scrollbar {
   display: none;
+}
+
+/* Firefox */
+.imgBox {
+  scrollbar-width: none;
 }

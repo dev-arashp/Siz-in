@@ -19,6 +19,7 @@ import {
 import LogoLoop from "../../../components/logo-loop/LogoLoop";
 import Foter from "../../../components/footer/Foter";
 import { Link, NavLink } from "react-router-dom";
+import { BiSolidLike } from "react-icons/bi";
 
 const techLogos = [
   { node: <SiReact size={50} />, title: "React", href: "https://react.dev" },
@@ -237,29 +238,221 @@ function ProfileUser() {
             </li>
           </ul>
 
-          <div className="grid grid-cols-3 gap-3 mt-8 *:rounded-xl">
-            <div>
-              <div className="grid grid-cols-2 absolute w-95">
-                <img className="rounded-tl-xl" src={user?.img} alt="" />
-                <img className="rounded-tr-xl" src={user?.img1} alt="" />
-                <img className="rounded-bl-xl" src={user?.img2} alt="" />
-                <img className="rounded-br-xl" src={user?.img3} alt="" />
-              </div>
-              <div className="relative rounded-xl h-76 bg-black/30 w-95 p-3">
-                <span className="text-lg font-semibold text-white">Apple</span>
-                <p className="text-xs text-white">Arash pourkhanali</p>
+          <div className="grid grid-cols-4 gap-3 mt-8">
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
               </div>
             </div>
-            <div>
-              <div className="grid grid-cols-2 absolute w-95 ">
-                <img className="rounded-tl-xl" src={user?.img4} alt="" />
-                <img className="rounded-tr-xl" src={user?.img5} alt="" />
-                <img className="rounded-bl-xl" src={user?.img6} alt="" />
-                <img className="rounded-br-xl" src={user?.img7} alt="" />
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img1} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
               </div>
-              <div className="relative h-76 bg-black/30 w-95 p-3 rounded-xl">
-                <span className="text-lg font-semibold text-white">Apple</span>
-                <p className="text-xs text-white">Arash pourkhanali</p>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img2} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img3} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70">
+              <img className="absolute" src={user?.img4} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl   *:w-70 ">
+              <img className="absolute" src={user?.img5} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img6} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img7} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img8} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img9} alt="" />
+              <div
+                className="relative bg-black/10 h-full flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img10} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
+              </div>
+            </div>
+            <div className=" *:rounded-xl  *:w-70 ">
+              <img className="absolute" src={user?.img11} alt="" />
+              <div
+                className="relative bg-black/10 h-56 flex items-end justify-between p-3
+              "
+              >
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-sm">
+                    Arash Pourkhanali
+                  </span>
+                  <p className="text-xs text-white">Arash</p>
+                </div>
+                <div className="*:text-xs *:text-white flex items-center">
+                  <BiSolidLike />
+                  <span>260</span>
+                </div>
               </div>
             </div>
           </div>

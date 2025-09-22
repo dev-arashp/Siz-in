@@ -27,7 +27,7 @@ function Home() {
           returnDuration={1.5}
           className="absolute hidden  lg:flex pt-20"
         />
-        <div className="h-180 z-100 relative  -mt-100 hidden lg:flex items-start justify-center">
+        <div className="h-50 z-100 relative  -mt-100 hidden lg:flex items-start justify-center">
           {" "}
           <TextType
             text={[

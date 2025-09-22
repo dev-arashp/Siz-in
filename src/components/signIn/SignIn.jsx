@@ -1,5 +1,3 @@
-import img from "../../../public/img/creator-pro-upsell-banner-border.webp";
-
 function SignIn() {
   return (
     <div className="flex flex-col items-center border-t border-dashed border-[#e8e8e8] mx-20 justify-center">
@@ -74,22 +72,6 @@ function SignIn() {
               </button>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="flex flex-col items-center">
-        <img src={img} alt="" />
-
-        <div className="my-3">
-          <span className="font-semibold">Upgrade to Behance Pro today:</span>
-          <span>
-            {" "}
-            Get advanced analytics, a custom portfolio website, and more
-            features to grow your creative career.
-          </span>
-
-          <button className="font-semibold text-blue-600">
-            Start your 7 day free trial
-          </button>
         </div>
       </div>
     </div>

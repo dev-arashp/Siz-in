@@ -65,7 +65,7 @@ function Navbar() {
                       className="flex items-center cursor-pointer"
                       onMouseEnter={() => hireHandler()}
                     >
-                      Hire Freelancers
+                      Resources
                     </div>
                   </div>
                 </ul>
@@ -75,7 +75,7 @@ function Navbar() {
               className="text-sm cursor-pointer font-medium pt-2 pl-5"
               onMouseEnter={() => careerHandler()}
             >
-              Career Resources
+              Hire
             </div>
           </div>
           <div className="flex gap-4">
@@ -106,8 +106,8 @@ function Navbar() {
           </div>
         </div>
 
-        {samyar && (
-          <div className="ml-70 bg-[#f2f2f2] shadow-md shadow-stone-200 absolute top-15 z-50 rounded-lg px-4 w-55 h-75">
+        {arash && (
+          <div className="ml-95 bg-[#f2f2f2] shadow-md shadow-stone-200 absolute top-15 z-50 rounded-lg px-4 w-55 h-75">
             <div className="py-4 flex flex-col gap-2 border-b border-[#e8e8e8]">
               <div className="flex gap-2 items-center">
                 <img className="size-4" src={img} alt="" />
@@ -180,14 +180,18 @@ function Navbar() {
             </div>
           </div>
         )}
-        {arash && (
-          <div className="ml-110 w-55 bg-[#f2f2f2] shadow-md shadow-stone-200 absolute top-15 z-50  rounded-lg px-4 flex flex-col py-4 gap-3">
-            <span className="text-sm font-medium ">Overview</span>
+        {samyar && (
+          <div className="ml-70 w-55 bg-[#f2f2f2] shadow-md shadow-stone-200 absolute top-15 z-50  rounded-lg px-4 flex flex-col py-4 gap-3">
+            <Link to="/Overview">
+              <span className="text-sm font-medium ">Overview</span>
+            </Link>
             <span className="text-sm font-medium ">Career Guides</span>
             <span className="text-sm font-medium ">Commissioned Projects</span>
-            <span className="text-sm font-medium ">
-              Creative Appreneticeship
-            </span>
+            <Link to="/CreativeApprenticeship">
+              <span className="text-sm font-medium ">
+                Creative Appreneticeship
+              </span>
+            </Link>
           </div>
         )}
       </div>

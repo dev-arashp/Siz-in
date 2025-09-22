@@ -24,7 +24,7 @@ function ImgBox() {
 
   return (
     <>
-      <div className="flex p-5 gap-5 overflow-x-scroll  imgBox">
+      <div className="flex p-5 gap-3 overflow-x-scroll  imgBox">
         {imgBox.map((item) => (
           <div key={item.id} className=" relative  group">
             <div className="flex gap-2  items-center absolute   inset-0 justify-center font-medium z-10">
@@ -34,7 +34,7 @@ function ImgBox() {
               <span className=" text-white text-sm  ">{item.title} </span>
             </div>
             <img
-              className="h-11 min-w-45  rounded-lg object-cover brightness-30 relative z-5 group-hover:brightness-45 duration-300"
+              className="h-11 min-w-50  rounded-lg object-cover brightness-30 relative z-5 group-hover:brightness-45 duration-300"
               src={item.imgeUrl}
               alt=""
             />
